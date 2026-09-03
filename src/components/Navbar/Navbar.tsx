@@ -102,7 +102,10 @@ export const Navbar: React.FC<NavbarProps> = ({ favoritesCount = 0 }) => {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        // Guarantee that GSAP does not leave the scroll container with overflow:hidden
+        // Guarantee that GSAP clears clipPath and does not leave the scroll container constrained
+        if (drawerRef.current) {
+          drawerRef.current.style.clipPath = '';
+        }
         if (scrollContainerRef.current) {
           scrollContainerRef.current.style.overflowY = 'auto';
           scrollContainerRef.current.style.touchAction = 'pan-y';
@@ -289,6 +292,8 @@ export const Navbar: React.FC<NavbarProps> = ({ favoritesCount = 0 }) => {
         className={`mobile-nav-drawer mobile-menu ${mobileMenuOpen ? 'is-open' : ''}`}
         id="mobile-navigation-drawer"
         aria-hidden={!mobileMenuOpen}
+        data-lenis-prevent
+        style={{ pointerEvents: mobileMenuOpen ? 'auto' : 'none' }}
       >
         <div className="mobile-drawer-header mobile-menu-header">
           <Link to="/" className="navbar-brand" onClick={handleCloseMenu}>
@@ -306,7 +311,11 @@ export const Navbar: React.FC<NavbarProps> = ({ favoritesCount = 0 }) => {
         </div>
 
         {/* Dedicated Internal Scroll Wrapper */}
-        <div className="mobile-menu-scroll" ref={scrollContainerRef}>
+        <div
+          className="mobile-menu-scroll"
+          ref={scrollContainerRef}
+          data-lenis-prevent
+        >
           <nav className="mobile-menu-nav" aria-label="Mobile Menu Navigation">
             <ul className="mobile-nav-links">
               {MOBILE_NAV_ITEMS.map((item, idx) => (
