@@ -1,0 +1,244 @@
+.property-card {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.property-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -12px rgba(23, 23, 23, 0.12);
+  border-color: rgba(176, 141, 87, 0.3);
+}
+
+.property-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  background-color: #E8E4DC;
+}
+
+.property-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.property-card:hover .property-card-image {
+  transform: scale(1.08);
+}
+
+.property-card-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.property-badge-status {
+  background-color: rgba(23, 23, 23, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--color-white);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.75rem;
+  font-weight: 500;
+}
+
+.property-badge-type {
+  background-color: var(--accent-gold);
+  color: var(--color-white);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.75rem;
+  font-weight: 500;
+}
+
+.property-card-fav-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.25s ease;
+  color: var(--dark-primary);
+}
+
+.property-card-fav-btn:hover {
+  background-color: var(--color-white);
+  color: #DC2626;
+  transform: scale(1.1);
+}
+
+.property-card-fav-btn.is-favorited {
+  color: #DC2626;
+  background-color: var(--color-white);
+}
+
+.property-card-price-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 1.25rem 0.85rem;
+  background: linear-gradient(to top, rgba(23, 23, 23, 0.85) 0%, rgba(23, 23, 23, 0) 100%);
+  color: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.property-card-price {
+  font-family: var(--font-serif);
+  font-size: 1.625rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #FAF6EC;
+}
+
+.property-card-city-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-gold-light);
+}
+
+.property-card-content {
+  padding: 1.5rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.property-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--dark-primary);
+  margin-bottom: 0.4rem;
+  transition: color 0.3s ease;
+}
+
+.property-card:hover .property-card-title {
+  color: var(--accent-gold);
+}
+
+.property-card-location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.property-card-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  margin-bottom: 1.25rem;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.spec-label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.spec-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-primary);
+}
+
+.property-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.property-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--dark-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.property-view-btn span {
+  position: relative;
+}
+
+.property-view-btn span::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--accent-gold);
+  transition: width 0.3s ease;
+}
+
+.property-card:hover .property-view-btn span::after {
+  width: 100%;
+}
+
+.property-view-btn .arrow-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--accent-gold);
+}
+
+.property-card:hover .property-view-btn .arrow-icon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 480px) {
+  .property-card-image-wrap {
+    height: 230px;
+  }
+  .property-card-content {
+    padding: 1.25rem 1rem;
+  }
+  .property-card-title {
+    font-size: 1.3rem;
+  }
+  .property-card-specs {
+    gap: 0.35rem;
+  }
+}

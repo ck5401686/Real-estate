@@ -1,0 +1,292 @@
+/* PROPERTIES PAGE STYLES */
+.properties-page {
+  padding-top: clamp(5.5rem, 8vw, 7.5rem);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.properties-hero-section {
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2rem) 2.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.properties-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 6vw, 5rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--dark-primary);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.properties-hero-sub {
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: var(--text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+/* Filter Controls Bar */
+.properties-controls-bar {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.5rem clamp(1.25rem, 3vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.category-pill-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--dark-primary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.category-pill:hover,
+.category-pill.active {
+  background-color: var(--dark-primary);
+  border-color: var(--dark-primary);
+  color: var(--color-white);
+}
+
+.controls-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-subtle);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--dark-primary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-toggle-btn:hover,
+.filter-toggle-btn.active {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.sort-select {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-subtle);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--dark-primary);
+  outline: none;
+  cursor: pointer;
+}
+
+/* Advanced Filter Drawer / Panel */
+.advanced-filters-panel {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.advanced-filters-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group-label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+.filter-field-input,
+.filter-field-select {
+  background-color: #FAF8F5;
+  border: 1px solid var(--border-subtle);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.85rem;
+  color: var(--dark-primary);
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.filter-field-input:focus,
+.filter-field-select:focus {
+  border-color: var(--accent-gold);
+}
+
+/* Amenities Checkbox Group */
+.amenities-filter-row {
+  max-width: 1440px;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem 2rem 0;
+  border-top: 1px dashed var(--border-subtle);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.amenity-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--dark-primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.amenity-checkbox-label input[type="checkbox"] {
+  accent-color: var(--accent-gold);
+  width: 16px;
+  height: 16px;
+}
+
+/* Properties Grid */
+.properties-grid-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem clamp(1.25rem, 3vw, 2rem) 6rem;
+}
+
+.results-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.properties-listing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+.properties-empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-subtle);
+}
+
+.empty-state-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Load More / Pagination */
+.properties-pagination-wrap {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+@media (max-width: 1200px) {
+  .properties-listing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+  .advanced-filters-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .properties-listing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .advanced-filters-container {
+    grid-template-columns: 1fr;
+  }
+  .properties-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .category-pill-list {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+  .category-pill-list::-webkit-scrollbar {
+    display: none;
+  }
+  .category-pill {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .controls-right {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .controls-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .filter-toggle-btn,
+  .sort-select {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .results-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .amenities-filter-row {
+    gap: 0.85rem 1.25rem;
+  }
+}

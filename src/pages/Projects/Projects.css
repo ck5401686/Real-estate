@@ -1,0 +1,204 @@
+/* PROJECTS PAGE STYLES */
+.projects-page {
+  padding-top: clamp(5.5rem, 8vw, 7.5rem);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.projects-hero-section {
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2rem) 2.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.projects-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 6vw, 5rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--dark-primary);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.projects-hero-sub {
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: var(--text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+.projects-filter-bar {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.5rem clamp(1.25rem, 3vw, 2rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.projects-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.project-tab-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  padding: 0.65rem 1.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  color: var(--dark-primary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.project-tab-btn:hover,
+.project-tab-btn.active {
+  background-color: var(--dark-primary);
+  border-color: var(--dark-primary);
+  color: var(--color-white);
+}
+
+.projects-grid-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem clamp(1.25rem, 3vw, 2rem) 6rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+/* Masterplan Modal */
+.masterplan-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.masterplan-modal {
+  background-color: var(--color-white);
+  max-width: 960px;
+  width: 100%;
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--dark-primary);
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-img-banner {
+  width: 100%;
+  height: clamp(180px, 30vh, 380px);
+  object-fit: cover;
+  margin-bottom: 2rem;
+}
+
+.modal-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.modal-meta-row {
+  display: flex;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.modal-desc {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.modal-highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1100px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    width: 100%;
+  }
+  .projects-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .project-tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .modal-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .masterplan-modal-overlay {
+    padding: 0.75rem;
+  }
+  .masterplan-modal {
+    padding: 1.25rem 1rem;
+  }
+  .modal-img-banner {
+    height: 190px;
+    margin-bottom: 1.25rem;
+  }
+}

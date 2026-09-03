@@ -1,0 +1,130 @@
+/* SCHEDULE VISIT PAGE STYLES */
+.schedule-page {
+  padding-top: clamp(5.5rem, 8vw, 7.5rem);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.schedule-hero-section {
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2rem) 2.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.schedule-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 6vw, 5rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--dark-primary);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.schedule-hero-sub {
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: var(--text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+.schedule-content-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2rem) 6rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3.5rem;
+}
+
+/* Booking Form Card */
+.schedule-form-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-subtle);
+  padding: 3.5rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.04);
+}
+
+.mode-toggle-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mode-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--dark-primary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.mode-toggle-btn.active {
+  background-color: var(--dark-primary);
+  border-color: var(--dark-primary);
+  color: #FFFFFF;
+}
+
+/* Right Protocol Card */
+.schedule-protocol-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.protocol-block {
+  background-color: #FAF8F5;
+  border: 1px solid var(--border-subtle);
+  padding: 2rem;
+}
+
+.protocol-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.protocol-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #444444;
+}
+
+.protocol-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .schedule-content-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .schedule-form-card {
+    padding: 1.75rem 1.25rem;
+  }
+  .mode-toggle-group {
+    grid-template-columns: 1fr;
+  }
+  .protocol-block {
+    padding: 1.5rem 1.25rem;
+  }
+}

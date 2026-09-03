@@ -1,0 +1,8 @@
+{
+  "name": "MAISON Luxury Real Estate",
+  "description": "Cinematic, editorial luxury real estate platform showcasing premier architectural residences and private estates across prime locations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
